@@ -7,7 +7,6 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 const NavBar = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-  const isAdmin = user?.email === process.env.ADMIN_EMAIL;
   return (
     <nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
@@ -30,19 +29,8 @@ const NavBar = async () => {
                 >
                   Sign out
                 </Link>
-                {isAdmin ? (
-                  <Link
-                    href="/dashboard"
-                    className={buttonVariants({
-                      size: "sm",
-                      variant: "ghost",
-                    })}
-                  >
-                    Dashboard ✨
-                  </Link>
-                ) : null}
                 <Link
-                  href="https://github.com/Venu005"
+                  href="https://github.com/Venu005/ai-joke-gen"
                   className={buttonVariants({
                     size: "sm",
                     className: "hidden sm:flex items-center gap-1",
@@ -77,7 +65,7 @@ const NavBar = async () => {
                 <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
 
                 <Link
-                  href="https://github.com/Venu005"
+                  href="https://github.com/Venu005/ai-joke-gen"
                   className={buttonVariants({
                     size: "sm",
                     className: "hidden sm:flex items-center gap-1",
